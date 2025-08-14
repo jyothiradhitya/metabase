@@ -1,7 +1,7 @@
-FROM openjdk:17-jdk-slim
+FROM openjdk:21-jdk-slim
 WORKDIR /app
 
-# Download Metabase during build
+# Download latest Metabase JAR
 ADD https://downloads.metabase.com/v0.53.5/metabase.jar /app/metabase.jar
 
 CMD ["java", "-jar", "metabase.jar"]
