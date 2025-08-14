@@ -1,11 +1,7 @@
-# Use official OpenJDK image
 FROM openjdk:17-jdk-slim
-
-# Set working directory
 WORKDIR /app
 
-# Copy Metabase JAR into container
-COPY metabase.jar .
+# Download Metabase during build
+ADD https://downloads.metabase.com/v0.53.5/metabase.jar /app/metabase.jar
 
-# Run Metabase
 CMD ["java", "-jar", "metabase.jar"]
